@@ -3,19 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {createStore} from 'redux';
+import { createStore } from 'redux';
+import allReducers from './reducers'
+const store = createStore(allReducers, 
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-//Store -> Globalized state
-
-
-//Action Increment
-
-
-//Reducer
-
-
-//Dispatch
-
+  
 ReactDOM.render(
   <React.StrictMode>
     <App />
@@ -27,3 +20,43 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+
+// import {createStore} from 'redux';
+
+// //Store -> Globalized state
+
+
+// //Action Increment
+// const increment = () => {
+//   return {
+//     type: 'INCREMENT'
+//   }
+// }
+// const decrement = () => {
+//   return {
+//     type: 'DECREMENT'
+//   }
+// }
+
+// //Reducer
+// const counter = (state = 0, action) => {
+//   switch(action.type) {
+//     case 'INCREMENT':
+//       return state + 1;
+//     case 'DECREMENT': 
+//       return state - 1;
+//     default: 
+//     return console.log('default case')
+//   }
+// };
+
+// let store = createStore(counter);
+
+// //Display in in the console
+
+// store.subscibe(()=> console.log(store.getState()));
+// //Dispatch
+
+// store.dispatch(increment())
+// store.dispatch(decrement())
