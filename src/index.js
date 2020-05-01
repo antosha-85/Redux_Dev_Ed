@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {createStore} from 'redux';
+
+//Store -> Globalized state
+
+
+//Action Increment
+
+
+//Reducer
+
+
+//Dispatch
 
 ReactDOM.render(
   <React.StrictMode>
