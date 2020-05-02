@@ -4,14 +4,21 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux';
-import allReducers from './reducers'
+import allReducers from './reducers';
+import { Provider } from 'react-redux';
+
+
 const store = createStore(allReducers, 
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+  store.subscribe(()=> console.log(store.getState()));
 
-  
+// store.dispatch(counterReducer())
+// store.dispatch(decrement())
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -55,8 +62,5 @@ serviceWorker.unregister();
 
 // //Display in in the console
 
-// store.subscibe(()=> console.log(store.getState()));
 // //Dispatch
 
-// store.dispatch(increment())
-// store.dispatch(decrement())
